@@ -12,12 +12,13 @@ const primitiveCheck = function(param1) {
 }
 
 /**
-* data1 === data2
-* return true
-* else return false
+* if data1 === data2
+*     return true
+* else 
+*     return false
 * attention function !== function
 **/
-export default function boolEqual(data1, data2, result = true) {
+export default function boolEqual(data1, data2) {
 	if (typeof data1 !== typeof data2) {
 		return false;
 	}
@@ -38,14 +39,22 @@ export default function boolEqual(data1, data2, result = true) {
 			return false;
 		}
 		for (let i = 0; i < data1.length; i ++) {
-			result = result && boolEqual(data1[i], data2[i]);
+			if (boolEqual(data1[i], data2[i]) === false) {
+				return false;
+			}
 		}
 	}
 	if (data1.toString() === "[object Object]") {
 		const keys = Object.keys(data1);
+		const keys2 = Object.keys(data2);
+		if (keys.length !== keys2) {
+			return false;
+		}
 		for (let i = 0; i < keys.length ; i ++) {
 			const key = keys[i];
-			result = result && boolEqual(data1[key], data2[key]);
+			if (boolEqual(data1[key], data2[key]) === false) {
+				return false;
+			}
 		}
 	}
 	return result;
