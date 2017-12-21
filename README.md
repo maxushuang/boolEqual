@@ -9,5 +9,5 @@ const obj2 = {
 };
 boolEqual(obj, obj2); // return true
 ```
-##Attention
-When compare function, it always return false, whatever the function attached an object or a single function. 
+## Attention
+When the function appears in comparison, it always return false. 
