@@ -47,7 +47,7 @@ export default function boolEqual(data1, data2) {
 	if (data1.toString() === "[object Object]") {
 		const keys = Object.keys(data1);
 		const keys2 = Object.keys(data2);
-		if (keys.length !== keys2) {
+		if (keys.length !== keys2.length) {
 			return false;
 		}
 		for (let i = 0; i < keys.length ; i ++) {
@@ -57,5 +57,5 @@ export default function boolEqual(data1, data2) {
 			}
 		}
 	}
-	return result;
+	return true
 }
