@@ -7,7 +7,7 @@ npm install boolEqual
 ```
 # Usage
 ```
-import boolEqual from 'boolEqual';
+const boolEqual = require('boolEqual');
 const test1 = [
 	{
 		arr1: [1, 2, 6]

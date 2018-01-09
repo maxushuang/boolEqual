@@ -18,7 +18,7 @@ const primitiveCheck = function(param1) {
 *     return false
 * attention function !== function
 **/
-export default function boolEqual(data1, data2) {
+function boolEqual(data1, data2) {
 	if (typeof data1 !== typeof data2) {
 		return false;
 	}
@@ -59,3 +59,4 @@ export default function boolEqual(data1, data2) {
 	}
 	return true
 }
+module.exports = boolEqual;
